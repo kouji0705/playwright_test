@@ -6,7 +6,6 @@ dotenv.config()
 test('test', async ({ page }) => {
   const userName = process.env.REACT_APP_USER_NAME || ''
   const password = process.env.REACT_APP_PASSWORD || ''
-  console.log('userName:', userName, 'password:', password)
 
   await page.goto('http://localhost:3010/')
   await page.getByRole('link', { name: 'ログイン' }).click()
