@@ -27,6 +27,8 @@ const config: PlaywrightTestConfig = {
       slowMo: 500, // テスト実行時のスローモーション
     },
     trace: 'on-first-retry',
+    // video: 'on-first-retry',
+    video: 'on',
   },
   projects: [
     {

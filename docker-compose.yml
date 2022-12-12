@@ -6,15 +6,15 @@ services:
     ports:
       - 3010:3000
     volumes:
-      - ./data/plugins:/usr/src/redmine/plugins
-      - ./data/themes:/usr/src/redmine/public/themes
+      - ./.data/plugins:/usr/src/redmine/plugins
+      - ./.data/themes:/usr/src/redmine/public/themes
     environment:
       REDMINE_DB_MYSQL: redmine-db
       REDMINE_DB_PASSWORD: redmine
     depends_on:
       - redmine-db
     restart: always
-    
+
   redmine-db:
     image: mariadb
     container_name: redmine-db
