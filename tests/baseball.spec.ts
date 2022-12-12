@@ -8,6 +8,8 @@ test('test', async ({ page }) => {
   await page.getByRole('combobox', { name: '検索' }).press('Enter');
   await page.getByRole('link', { name: 'Apple - 公式サイト 広告· https://www.apple.com/jp' }).click();
   await page.getByRole('list', { name: '製品' }).getByRole('listitem').filter({ hasText: 'iPhone' }).locator('img').click();
+
   await page.waitForTimeout(3000) // 確認様に3秒待機
   await expect(page).toHaveURL(/.*buy-iphone/);
 });
+
